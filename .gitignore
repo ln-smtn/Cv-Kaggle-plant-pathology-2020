@@ -1,0 +1,22 @@
+# Виртуальное окружение
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Веса моделей и крупные артефакты обучения
+*.pth
+*.pt
+*.ckpt
+
+!logs/.gitkeep
+
+
+# macOS
+.DS_Store
