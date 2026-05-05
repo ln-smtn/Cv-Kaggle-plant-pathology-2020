@@ -1,0 +1,11 @@
+Сводка кросс-валидации
+========================================
+Fold 1: ROC-AUC = 0.98452
+Fold 2: ROC-AUC = 0.97566
+Fold 3: ROC-AUC = 0.98276
+Fold 4: ROC-AUC = 0.99673
+Fold 5: ROC-AUC = 0.98800
+Mean:     0.98553
+Std:      0.00689
+Best fold: 4 (AUC = 0.99673)
+Total time: 143.5 min
