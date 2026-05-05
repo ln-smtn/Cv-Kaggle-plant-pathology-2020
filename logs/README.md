@@ -7,4 +7,4 @@
 | `reports/training_summary.txt` | Краткая сводка: AUC по фолдам, mean/std, лучший фолд, время. |
 | `reports/training_log_best_fold.txt` | Заметки по лучшему фолду (если вели). |
 
-В ноутбуке `solution-final.ipynb` путь к основному CSV задаётся как `logs/history/training_log.csv`.
+В ноутбуке путь к основному CSV задаётся как `logs/history/training_log.csv`.
