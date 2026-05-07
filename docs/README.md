@@ -67,7 +67,14 @@ Plant Pathology 2020 (FGVC7)
 ### 3.1. Базовый выбор модели
 
 **Модель:** [`seresnext50_32x4d`](https://github.com/huggingface/pytorch-image-models/blob/main/timm/models/seresnext.py) в [timm](https://github.com/huggingface/pytorch-image-models) (SE-ResNeXt-50, группы 32×4d). **Статьи:** SE-модуль — [Squeeze-and-Excitation Networks (Hu et al., CVPR 2018)](https://arxiv.org/abs/1709.01507); стек ResNeXt — [Aggregated Residual Transformations for Deep Neural Networks (Xie et al., CVPR 2017)](https://arxiv.org/abs/1611.05431).
-
+ResNeXt: как ResNet, но внутри блока свёрток используется grouped convolution с параметром cardinality (здесь 32 группы) и шириной ветки 4. Идея: больше “параллельных преобразований” → лучшее качество при близком бюджете.
+SE (Squeeze‑and‑Excitation): добавляет внимание по каналам: сеть сама “подкручивает” важность каналов признаков (через global pooling + маленькую MLP + sigmoid).
+Почему подходит тут: для fine‑grained текстур/пятен на листьях такие CNN‑бэкбоны обычно сильные и хорошо дообучаются с ImageNet.
+Ссылка на реализацию модели (как в твоём коде через timm)
+код в timm: https://github.com/huggingface/pytorch-image-models/blob/main/timm/models/seresnext.py
+Статьи (если нужно для защиты)
+SE: https://arxiv.org/abs/1709.01507
+ResNeXt: https://arxiv.org/abs/1611.05431
 
 - сильный CNN-бэкбон для fine-grained текстур,
 - предобучение на ImageNet,
